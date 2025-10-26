@@ -8,10 +8,17 @@ html {
   block-size: 100%;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .page {
-  inline-size: 1200px;
+  inline-size: 100%;
+  max-inline-size: 1200px;
   block-size: 100%;
-  margin: auto;
+  margin: 0 auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
@@ -19,6 +26,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
 }
 
 h1,
@@ -89,6 +97,8 @@ ol {
   gap: 30px;
   block-size: 298px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #D9D9D9 rgb(217 217 217 / 10%);
 }
 
 .content__list::-webkit-scrollbar {
@@ -258,9 +268,7 @@ ol {
   background-color: #545050;
 }
 
-/* Состояния */
-
-/* Кнопки */
+/* Состояния кнопок */
 .button:hover {
   text-decoration: underline;
 }
@@ -278,8 +286,13 @@ ol {
   outline-offset: 1px;
 }
 
-/* Формы */
+/* Состояния форм */
 .search-form__label:has(:focus-visible) {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:focus-visible {
   outline: 1px solid #FFF;
   outline-offset: 1px;
 }
@@ -288,12 +301,12 @@ ol {
   text-decoration: underline;
 }
 
-.search-form__label:has(.search-form__checkbox:focus-visible) {
+.search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
   outline: 1px solid #FFF;
   outline-offset: 1px;
 }
 
-/* Карточки */
+/* Состояния карточек */
 .content__card-link:hover {
   text-decoration: underline;
 }
